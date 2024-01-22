@@ -57,13 +57,13 @@ namespace racon
         {
             fprintf(stderr, "[racon::Window::add_layer] error: "
                             "unequal quality size!\n");
-            exit(1);
+            return;
         }
         if (begin >= end || begin > sequences_.front().second || end > sequences_.front().second)
         {
             fprintf(stderr, "[racon::Window::add_layer] error: "
                             "layer begin and end positions are invalid!\n");
-            exit(1);
+            return;
         }
 
         sequences_.emplace_back(sequence, sequence_length);
